@@ -7,6 +7,8 @@
     <body>
         <script>
             let a
+            let j
+            let result
             function isPrime(x){
                 if (x >= 0 && Number.isInteger(x)) {
                     if(x <= 1) return false;
@@ -21,9 +23,9 @@
                 }
             }
             function sgolbach(y) {
-                if (y <= 2 || y % 2 !== 0 || Number.isInteger(y)) return null;
+                if (y <= 2 || y % 2 !== 0 || !Number.isInteger(y)) return null;
                 for (let i = 2; i <= y / 2; i++) {
-                    let j = y - i
+                    j = y - i
                     if(isPrime(i) && isPrime(j)){
                         return [i,j]
                     }
@@ -32,11 +34,19 @@
             }
             function check(){
                 a = parseInt(prompt("Choose the even number you want to find the combination of primes for"))
-                alert(sgolbach(a) ,"is an example of a pair of primes that add up to",a)
+                result = sgolbach(a)
+                if(!result){
+                    alert("invalid input or no prime pair found")
+                }else{
+                    alert(result[0]+'+'+result[1]+'='+a)
+                }
             }
         </script>
         <h1>
-            The strong goldbach conjecture states that any even positive intager can be written as the sum of two primes
+            The strong goldbach conjecture states that any even positive integer can be written as the sum of two primes
         </h1>
+        <button onclick="check()">
+            find the combination of primes that add up to the even integer of your choice
+        </button>
     </body>
 </html>
