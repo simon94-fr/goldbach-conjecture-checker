@@ -6,7 +6,7 @@
     </head>
     <body>
         <script>
-            let a
+            let n
             let j
             let result
             function isPrime(x){
@@ -29,17 +29,17 @@
                     if(isPrime(i) && isPrime(j)){
                         return [i,j]
                     }
-                    console.log("tested for i = " + i + "; the max value of i will be "+ y / 2 +"; the number is "+a)
+                    console.log("tested for i = " + i + "; the max value of i will be "+ y / 2 +"; the number is "+y)
                 }
                 return false;
             }
             function check(){
-                a = parseInt(prompt("Choose the even number you want to find the combination of primes for"))
-                result = sgolbach(a)
+                n = parseInt(prompt("Choose the even number you want to find the combination of primes for"))
+                result = sgolbach(n)
                 if(!result){
                     alert("invalid input or no prime pair found")
                 }else{
-                    alert(result[0] + "and"+ result[1]+"are examples of two primes who add up too"+a)
+                    alert(result[0] + "and"+ result[1]+"are examples of two primes who add up too"+n)
                 }
             }
         </script>
