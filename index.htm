@@ -27,15 +27,15 @@
                 for (let i = 2; i <= y / 2; i++) {
                     j = y - i
                     if(isPrime(i) && isPrime(j)){
-                        return [i,j]
+                        result = [i,j]
                     }
                     console.log("tested for i = " + i + "; the max value of i will be "+ y / 2 +"; the number is "+y)
                 }
                 return false;
             }
-            function check(){
+            function checkg(){
                 n = parseInt(prompt("Choose the even number you want to find the combination of primes for"))
-                result = sgolbach(n)
+                sgolbach(n)
                 if(!result){
                     alert("invalid input or no prime pair found")
                 }else{
@@ -46,7 +46,7 @@
         <h1>
             The strong goldbach conjecture states that any even positive integer can be written as the sum of two primes
         </h1>
-        <button onclick="check()">
+        <button onclick="checkg()">
             find the combination of primes that add up to the even integer of your choice
         </button>
     </body>
