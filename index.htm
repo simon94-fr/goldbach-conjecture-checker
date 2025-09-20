@@ -29,7 +29,7 @@
                 for (let i = 2; i <= y / 2; i++) {
                     j = y - i
                     if(isPrime(i) && isPrime(j)){
-                        push.pairs([i,j])
+                        pairs.push([i,j])
                     }
                     console.log("tested for i = " + i + "; the max value of i will be "+ y / 2 +"; the number is "+y)
                 }
@@ -38,7 +38,7 @@
             function checkg(){
                 n = parseInt(prompt("Choose the even number you want to find the pair of primes for"))
                 result = sgolbach(n)
-                if(!result){
+                if (!result || result.length === 0) {
                     alert("invalid input or no prime pair found")
                 }else{
                     alert(result[0] + " and "+ result[1]+" are examples of two primes who add up too "+n)
