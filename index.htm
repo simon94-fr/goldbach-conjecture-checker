@@ -22,10 +22,18 @@
             function sgolbach(y) {
                 if (y <= 2 || y % 2 !== 0 || !Number.isInteger(y)) return null;
                 let pairs = []
-                for (let i = 2; i <= y / 2; i++) {
-                    let j = y - i
-                    if(isPrime(i) && isPrime(j)){
-                        pairs.push([i,j])
+                if(isPrime(y - 2)){
+                    pairs.push([2,(y - 2)])
+                }
+                if(isPrime(y - 3)){
+                    pairs.push([3,(y - 3)])
+                }
+                for (let i = 7; i <= y / 2; i += 6) {
+                    if(isPrime(i - 2) && isPrime(y - (i - 2))){
+                        pairs.push([(i - 2),(y - (i - 2))])
+                    }
+                    if(isPrime(i) && isPrime(y - i)){
+                        pairs.push([i,(y - i)])
                     }
                     console.log("tested for i = " + i + "; the max value of i will be "+ y / 2 +"; the number is "+y)
                 }
