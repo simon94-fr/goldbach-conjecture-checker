@@ -5,6 +5,12 @@
         </title>
     </head>
     <body>
+        <h1>
+            The strong goldbach conjecture states that any even positive integer can be written as the sum of two primes
+        </h1>
+        <input type="number" id="num" placeholder="enter the even number you want to find the primes that satisfy the goldbach conjecture to">
+        <button onclick="checkg()">hi</button>
+        <p id="output"></p>
         <script>
             function isPrime(x){
                 if (x >= 0 && Number.isInteger(x)) {
@@ -40,7 +46,7 @@
                 return pairs;
             }
             function checkg(){
-                let n = parseInt(prompt("Choose the even number you want to find the pair of primes for"))
+                let n = parseInt(document.getElementById("num").value)
                 let result = sgolbach(n)
                 if (!result || result.length === 0) {
                     alert("invalid input or no prime pair found")
@@ -49,11 +55,5 @@
                 }
             }
         </script>
-        <h1>
-            The strong goldbach conjecture states that any even positive integer can be written as the sum of two primes
-        </h1>
-        <button onclick="checkg()">
-            find the pair of primes that add up to the even integer of your choice
-        </button>
     </body>
 </html>
