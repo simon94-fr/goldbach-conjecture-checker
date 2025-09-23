@@ -49,9 +49,11 @@
                 let n = parseInt(document.getElementById("num").value)
                 let result = sgolbach(n)
                 if (!result || result.length === 0) {
-                    alert("invalid input or no prime pair found")
+                    document.getElementById("output").innerHTML =
+                    "invalid input or no prime pair found"
                 }else{
-                    alert(result[0][0] + " and "+ result[0][1]+" are examples of two primes who add up too "+n)
+                    document.getElementById("output").innerHTML =
+                    result[0][0] + " and " + result[0][1] + " are examples of two primes that add up to " + n;
                 }
             }
         </script>
