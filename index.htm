@@ -45,15 +45,17 @@
                 }
                 return pairs;
             }
-            function checkg(){
-                let n = parseInt(document.getElementById("num").value)
-                let result = sgolbach(n)
+            function checkg() {
+                let n = parseInt(document.getElementById("num").value);
+                let result = sgolbach(n);
+
                 if (!result || result.length === 0) {
                     document.getElementById("output").innerHTML =
-                    "invalid input or no prime pair found"
-                }else{
+                        "Invalid input or no prime pair found.";
+                } else {
                     document.getElementById("output").innerHTML =
-                    result[0][0] + " and " + result[0][1] + " is an example of two primes that add up to " + n;
+                        result.map(pair => pair[0] + " and " + pair[1]).join("<br>") +
+                        "<br>are prime pairs that add up to " + n;
                 }
             }
         </script>
